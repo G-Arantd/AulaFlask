@@ -19,4 +19,4 @@ app.secret_key = SECRET_KEY
 
 migrate: Migrate = Migrate(app, db)
 
-from app.Routes import *
+from app.Routes.Rotas import *

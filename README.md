@@ -10,19 +10,3 @@
     cd .\nome_do_projeto\
   ### Baixar o requirements.txt (no caso do AulaFlask) e colocar na pasta nome_do_projeto logo após executar o comando:
     pip install -r requirements.txt
-
-# COMO EXECUTAR O REPOSITÓRIOS
-
-  ### Procurar o arquivo chamado .env e alterar o nome do banco de dados
-    DATABASE_URL=postgresql://postgres:postgres@localhost/(nome_do_banco_de_dados)
-
-  ### Executar esses comandos em ordem para criação do banco de dados
-    flask db init
-
-    
-  ### 
-  ### 
-  ### 
-
-  
-  ### Procurar o arquivo run.py e executar ele
