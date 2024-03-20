@@ -11,7 +11,7 @@ app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URL
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db: SQLAlchemy = SQLAlchemy(app)
 
-from app.Models import Tabelas
+from app.Models import RegistrationsTable
 
 CORS(app, supports_credentials=True)
 

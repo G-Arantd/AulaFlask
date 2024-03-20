@@ -1,28 +1,28 @@
 from app import db
 
-from app.Models.Tabelas import Tabela
+from app.Models.RegistrationsTable import RegistrationsTable
 
-def get_tabela(id: int):
-    tabela = Tabela.query.filter_by(id=id).first()
+def get_table(id: int):
+    table = RegistrationsTable.query.filter_by(id=id).first()
     
-    if tabela:
-        return tabela
+    if table:
+        return table
     else:
         return None
     
-def get_tabela_all():
-    tabela = Tabela.query.all()
+def get_table_all():
+    table = RegistrationsTable.query.all()
     
-    if tabela:
-        return tabela
+    if table:
+        return table
     else:
         return None
 
-def create_tabela(username: str, password: str):
+def create_table(username: str, password: str):
     
     try:
-        new_tabela = Tabela(username=username, password=password)
-        db.session.add(new_tabela)
+        new_table = RegistrationsTable(username=username, password=password)
+        db.session.add(new_table)
         db.session.commit()
     
         return True
@@ -31,14 +31,14 @@ def create_tabela(username: str, password: str):
         
         return False
     
-def update_tabela(id: int, username: str, password: str):
+def update_table(id: int, username: str, password: str):
     
     try:
-        tabela = get_tabela(id=id)
+        table = get_table(id=id)
         
-        if tabela:
-            tabela.username = username
-            tabela.password = password
+        if table:
+            table.username = username
+            table.password = password
             
             db.session.commit()
             
@@ -53,12 +53,12 @@ def update_tabela(id: int, username: str, password: str):
         
         return False
 
-def delete_tabela(id: int):
+def delete_table(id: int):
     try:
-        tabela = get_tabela_all(id=id)
+        table = get_table_all(id=id)
         
-        if tabela:
-            db.session.delete(tabela)
+        if table:
+            db.session.delete(table)
             db.session.commit()
             
             return True

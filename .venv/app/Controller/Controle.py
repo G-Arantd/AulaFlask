@@ -5,14 +5,16 @@ def get_user(data):
     
     id: int = data.get("id")
     
-    user = get_tabela(id)
-    
+    user = get_table(id)
+
     if user:
         
         profile_info = {
-            "username": user.usename,
+            "username": user.username,
             "password": user.password
         }
+        
+        print(profile_info)
         
         return jsonify(profile_info)
     
@@ -23,7 +25,7 @@ def get_user(data):
     
 def get_users():
     
-    users = get_tabela_all()
+    users = get_table_all()
     
     users_list = []
     
@@ -51,7 +53,7 @@ def create_user(data):
         
         return jsonify({"message": "as informações são vazias para serem registradas."})
     
-    result = create_tabela(username, password)
+    result = create_table(username, password)
     
     if result:
         
@@ -67,7 +69,7 @@ def update_user(data):
     username: str = data.get("username")
     password: str = data.get("password")
     
-    result = update_tabela(id, username, password)
+    result = update_table(id, username, password)
     
     if result:
         return jsonify({"message": "Usuário atualizado com sucesso!"})
@@ -81,7 +83,7 @@ def delete_user(data):
     
     if id:
         
-        result = delete_tabela(id)
+        result = delete_table(id)
         
         if result:
             return jsonify({"message": "Usuário removido com sucesso."}), 200

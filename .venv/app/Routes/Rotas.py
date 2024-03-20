@@ -8,7 +8,11 @@ def view_user():
     
     data = request.json
     
+    print(data)
+    
     result = get_user(data)
+    
+    print(result)
     
     return result
 
@@ -16,6 +20,8 @@ def view_user():
 def add_user():
     
     data = request.json
+    
+    print(data)
     
     result = create_user(data)
     
