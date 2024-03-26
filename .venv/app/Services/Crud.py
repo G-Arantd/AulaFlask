@@ -55,7 +55,7 @@ def update_table(id: int, username: str, password: str):
 
 def delete_table(id: int):
     try:
-        table = get_table_all(id=id)
+        table = get_table(id=id)
         
         if table:
             db.session.delete(table)
